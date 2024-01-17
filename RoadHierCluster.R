@@ -86,7 +86,7 @@ RoadHierCluster <- function(roads, points, tol = 5000, idvar, weight_met = c('1'
 
   # Assign cluster to succesfully clustered points
   pts_net <- pts_net %>% select(id)
-  pts_net$pts_net <- NA  # Initialize cluster column
+  pts_net$cluster <- NA  # Initialize cluster column
   pts_net$cluster[orig] <- clusters  # Assign cluster IDs to nodes with idvar
 
   cluster_frame <- pts_net %>% st_drop_geometry() %>%
